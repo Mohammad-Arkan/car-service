@@ -19,7 +19,10 @@ const navItems = <>
 <li><Link to="/">About</Link></li>
 <li><Link to="/">Contact</Link></li>
 {
-  user?.email ? <button onClick={handleLogOut} className="btn btn-primary">Log out</button>
+  user?.email ? <>
+  <li><Link to="/bookings">My booking</Link></li>
+  <button onClick={handleLogOut} className="btn btn-primary">Log out</button>
+  </>
   :<li><Link to="/login">Login</Link></li>
 }
 

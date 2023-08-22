@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 
 const BookService = () => {
     const service = useLoaderData()
-    const {title, price, img, _id} = service
+    const {title, price, img, _id, } = service
     // const {user} = useContext(AuthContext)
     const handleBookService =(e)=> {
         e.preventDefault()
@@ -22,6 +22,7 @@ const BookService = () => {
         phone,
         amount,
         message,
+        title
         
      }
         console.log(booking)
