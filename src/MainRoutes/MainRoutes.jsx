@@ -1,10 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayoute from "../Layoute/MainLayoute";
-
 import HomeRoute from "../pages/HomePage.jsx/Home/HomeRoute";
 import Login from "../pages/LogIn/Login";
 import SingUp from "../pages/LogIn/SingUp";
-import CheckOut from "../pages/CheckOut/CheckOut";
+import BookService from "../pages/BookService/BookService";
 
 const router = createBrowserRouter([
     {
@@ -24,8 +23,8 @@ const router = createBrowserRouter([
         element:<SingUp></SingUp>
        },
        {
-        path:'/checkout/:id',
-        element:<CheckOut></CheckOut>,
+        path:'/book/:id',
+        element:<BookService></BookService>,
         loader:({params})=> fetch(`http://localhost:5000/service/${params.id}`)
        }
       ],

@@ -4,20 +4,22 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import { useContext } from 'react';
 
 const NavBar = () => {
+  const {user, logOut} = useContext(AuthContext)
+
   const handleLogOut =()=> {
     logOut()
-    .then()
+    .then(()=>{})
     .catch((error)=> {
       console.error(error)
     })
   }
-  const {user, logOut} = useContext(AuthContext)
+
 const navItems = <>
 <li><Link to="/">Home </Link></li>
 <li><Link to="/">About</Link></li>
 <li><Link to="/">Contact</Link></li>
 {
-  user? <li><Link onClick={handleLogOut} to="/login">LogOut</Link></li>
+  user?.email ? <button onClick={handleLogOut} className="btn btn-primary">Log out</button>
   :<li><Link to="/login">Login</Link></li>
 }
 
